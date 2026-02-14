@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY.SYS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <header>
+        <div class="header-inner">
+            <div class="header-left">
+                <h1 class="site-title">MEMORY<span class="dim">.SYS</span></h1>
+                <p class="site-subtitle">▸ memory system <span class="cursor">█</span></p>
+            </div>
+            <div class="header-right">
+                <div class="status-block">
+                    <span class="status-dot"></span>
+                    <span class="status-text">ONLINE</span>
+                    <span id="clock" class="clock">00:00:00</span>
+                </div>
+                <div class="view-tabs">
+                    <button id="view-index" class="tab active">INDEX</button>
+                    <button id="view-timeline" class="tab">JOURNAL</button>
+                    <button id="view-config" class="tab">CONFIG</button>
+                </div>
+                <div class="search-wrap">
+                    <span class="search-prompt">▸</span>
+                    <input type="text" id="search" placeholder="search..." autocomplete="off" spellcheck="false">
+                    <span class="search-slash">/</span>
+                </div>
+            </div>
+        </div>
+        <div class="data-stream" id="dataStream"></div>
+    </header>
+
+    <main>
+        <div id="stats"></div>
+        <div id="calendar"></div>
+        <div id="content"></div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
