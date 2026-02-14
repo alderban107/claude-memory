@@ -122,22 +122,25 @@ The `viewer/` directory contains a local web app for browsing your memory files.
 - **Search**: Full-text search across all views
 - **Calendar strip**: Visual overview of which days have memory entries
 
-### Running the viewer
+### Installing the viewer
+
+Copy the viewer files into your memory directory:
 
 ```bash
-cd viewer
-python3 server.py
+cp -r viewer ~/.claude/memory/viewer
+```
+
+Then run it:
+
+```bash
+python3 ~/.claude/memory/viewer/server.py
 ```
 
 This starts a local server on `http://localhost:8642` and opens your browser. Press `Ctrl+C` to stop.
 
-You can also add a shell alias for convenience:
+You can add a shell alias for convenience:
 
 ```bash
-# Fish
-alias memory-viewer="python3 ~/.claude/memory/viewer/server.py"
-
-# Bash/Zsh
 alias memory-viewer="python3 ~/.claude/memory/viewer/server.py"
 ```
 
@@ -157,7 +160,25 @@ The viewer ships with a cyberpunk terminal aesthetic (scanlines, glitch effects,
 }
 ```
 
-You can also add a background character image by placing a PNG in the viewer directory and adding a `.nagato` element to `index.html` (see the CSS for the existing styling).
+You can also add a background character image by placing a PNG in the viewer directory and adding a positioned element to `index.html` with styling like:
+
+```css
+.background-character {
+    position: fixed;
+    bottom: 0;
+    right: 40px;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.12;
+    filter: brightness(0.9) saturate(0.2) sepia(0.6) hue-rotate(120deg) contrast(1.1);
+}
+
+.background-character img {
+    display: block;
+    height: 420px;
+    width: auto;
+}
+```
 
 ## Design Decisions
 
